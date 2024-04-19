@@ -31,15 +31,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="По алфавиту"
+            style="@style/CustomRadioButtonStyle"
+            android:button="@drawable/selector_radio_button"
             android:checked="true"
-            />
+            android:padding="14dp" />
 
         <RadioButton
             android:id="@+id/rbtnBirthday"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="По дню рождения"
-        />
+            style="@style/CustomRadioButtonStyle"
+            android:button="@drawable/selector_radio_button"
+            android:padding ="14dp" />
     </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

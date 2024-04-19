@@ -19,4 +19,8 @@
         <item name="android:fontFamily">@font/inter_semibold</item>
         <item name="tabTextColor">@color/grey97</item>
     </style>
+
+    <style name="CustomRadioButtonStyle" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="buttonTint">#6534FF</item>
+    </style>
 </resources>
