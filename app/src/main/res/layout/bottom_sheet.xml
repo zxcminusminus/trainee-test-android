@@ -30,13 +30,16 @@
             android:id="@+id/rbtnAlfavit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="По алфавиту"
             android:checked="true"
-            android:text="По алфавиту" />
+            />
 
         <RadioButton
             android:id="@+id/rbtnBirthday"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="По дню рождения" />
+            android:text="По дню рождения"
+        />
     </RadioGroup>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,25 +6,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.aliveoustside.kodeapp.R
 import com.aliveoustside.kodeapp.adapters.RVAdapter
 import com.aliveoustside.kodeapp.databinding.FragmentListBinding
 import com.aliveoustside.kodeapp.model.ItemToShow
 import com.aliveoustside.kodeapp.ui.VM
 import com.aliveoustside.kodeapp.utility.ListFragmentState
 import com.aliveoustside.kodeapp.utility.Util
-import com.google.android.material.snackbar.Snackbar
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import java.io.Serializable
 
 class ListFragment : Fragment() {
@@ -70,10 +64,7 @@ class ListFragment : Fragment() {
                 launch {
                     vm.searchRequest.collect { query ->
                         if (!query.isNullOrEmpty()) {
-                            //println("zxcc ${vm.allListsToShow.value[dep]}")
                             val spisok = vm.allListsToShow.value[dep]
-                            println("zxcc spisok $spisok")
-                            println("zxcc query $query")
                             spisok?.filter{ item ->
                                 //println("zxcc item $item")
                                 when (item) {
@@ -85,7 +76,6 @@ class ListFragment : Fragment() {
                                     is ItemToShow.Divider -> true
                                 }
                             }?.toMutableList()?.also { list ->
-                                println("zxcc $list")
                                 val ind = list.indexOfFirst { it is ItemToShow.Divider }
                                 if (ind == list.size - 1 && ind >= 0) {
                                     list.removeAt(ind)

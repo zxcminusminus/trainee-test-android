@@ -21,7 +21,7 @@ sealed class EmployeeViewHolder( binding: ViewBinding):RecyclerView.ViewHolder(b
                 .error(R.drawable.goostavo_placeholder)
                 .into(binding.ivAvatar)
             binding.tvName.text = employee.firstName + " " + employee.lastName
-            binding.tvNameTag.text =employee.userTag
+            binding.tvNameTag.text = employee.userTag.lowercase()
             binding.tvDepartment.text = employee.department
             binding.tvBDOpt.text = employee.birthdayOpt?.let { Util.formatDateToDMMM(it) }
         }

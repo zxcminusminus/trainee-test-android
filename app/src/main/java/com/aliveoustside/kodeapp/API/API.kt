@@ -19,5 +19,5 @@ interface API {
         "Accept: application/json, application/xml",
         "Prefer: code=500, example=error-500"
     )
-    suspend fun getEmployeesError():Response<ServerResponse>
+    suspend fun getEmployeesWithError():Response<ServerResponse>   //for test
 }

@@ -95,11 +95,7 @@ class VM(app: Application) : AndroidViewModel(app) {
 
     fun refresh() = viewModelScope.launch {
         if (hasInternet()) {
-            val response: Response<ServerResponse> = if ((1..20).random() < 10) {
-                RetrofitInstance.api.getEmployeesError()
-            } else {
-                RetrofitInstance.api.getEmployees()
-            }
+            val response: Response<ServerResponse> = RetrofitInstance.api.getEmployees()
             oneTimeEvent.emit(handleRefreshResponse(response))
         } else {
             oneTimeEvent.emit(Util.OneTimeEvent.REFRESH_ERROR_INTERNET)

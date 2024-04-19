@@ -9,7 +9,6 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import com.aliveoustside.kodeapp.R
 import com.aliveoustside.kodeapp.databinding.FragmentErrorBinding
-import com.aliveoustside.kodeapp.databinding.FragmentListBinding
 import com.aliveoustside.kodeapp.ui.VM
 
 class ErrorFragment : Fragment() {
